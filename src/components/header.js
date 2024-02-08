@@ -70,6 +70,21 @@ const Header = ({ siteTitle, headerChild }) => (
       >
         Contact
       </Link>
+      <Link
+        style={{
+          //fontFamily: "Henken Grotesk",
+          padding: "4px 16px",
+          fontSize: "18px",
+          fontWeight: "700",
+          background: "#f3f3f3",
+          borderRadius: "8px",
+          color: "#939393",
+          textDecoration: "none",
+        }}
+        to="/ideas"
+      >
+        Ideas
+      </Link>
     </nav>
     <div
       style={{ display: "flex", width: "50%", justifyContent: "space-between" }}

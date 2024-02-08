@@ -53,8 +53,10 @@ function Cta() {
         padding: "var(--space-5)",
         //display: "flex",
         gap: "3rem",
+        //maxWidth: "70vw",
       }}
     >
+      <div style={{margin: "auto", maxWidth: "70vw", display: "flex", width: "100%"}}>
       <div
         style={{
           //width: "50%",
@@ -136,6 +138,7 @@ function Cta() {
             </p>
           </div>
         ))}
+      </div>
       </div>
     </div>
   )

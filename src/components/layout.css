@@ -4,6 +4,7 @@
   /*--color-primary: #0909ca;*/
   --color-primary: #ffcd00;
   --color-link: #0909ca;
+  --color-semafor: #f8f5d7;
   --color-code-bg: #fff4db;
   --color-font: #242424;
   --color-code: #8a6534;
@@ -42,14 +43,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: var(--color-text);
-  background: #fff;
+  /*background: #fff;*/
+  /* background: var(--color-semafor);*/
+  background: #f2f2f2;
+  /*background-url: http://api.thumbr.it/whitenoise-361x370.png?background=4ea6caff&noise=626262&density=31&opacity=53;*/
   font-family: sans-serif;
   font-family: var(--font-sans);
   font-weight: normal;
   margin: 0;
   word-wrap: break-word;
-  /*font-family: "Cormorant Garamond", -apple-system, serif;*/
-  font-family: "Hanken Grotesk", -apple-system, serif;
+  font-family: "Cormorant Garamond", -apple-system, serif;
+  /*font-family: "Hanken Grotesk", -apple-system, serif;*/
   /*border: 3px solid var(--color-primary);*/
 }
 header a {
@@ -300,4 +304,33 @@ button {
   /*padding: 32px;*/
   background: var(--color-link);
   color: #fff;
+}
+.cards {
+  width: 282px;
+  height: 404px;
+  padding: 40px;
+  /*
+  border-color: #000;
+  border-width: 15px;
+  /* border: "1px solid #9e7f00", 
+            border-radius: "8px";
+            padding: "24px"; 
+            background: "#fff";
+            
+            box-Shadow: "7px 5px 0px -2px #9e7f00";*/
+            background-color: #fff;
+  position: relative;
+  border: 1px solid #242424;
+  border-radius: 16px;
+  box-shadow: 5px 5px 0px 0px #d5d5d5;
+}
+.cards::before{
+  content: " ";
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  border-radius: 8px;
+  border: 2px solid #e7e7e7;
 }
