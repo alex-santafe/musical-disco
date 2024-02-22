@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+.grid-sketches {
+    /*aspect-ratio: .12653061224489795 / 1;*/
+        display: grid;
+        flex: none;
+        gap: 6px;
+        grid-auto-rows: minmax(0, 1fr);
+        grid-template-columns: repeat(4, minmax(50px, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        /*height: var(--framer-aspect-ratio-supported, 9800px);*/
+        justify-content: center;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        transform: perspective(1200px);
+        width: 100%;
+    }
+
+.figure {
+    font-family: 'Inconsolata', sans-serif;
+    font-size: 12px;
+    margin: 0;
+    color: var(--color-grey);
+}
+.sketchCard {
+    background: #fff;
+    //background: #ffedd2;
+        border-radius: 16px;
+        height: calc((100vw - 100px) / 4);
+        display: flex;
+        padding: 16px;
+        flex-direction: column;
+        //justify-content: space-between;
+        justify-content: flex-start;
+        gap: 1rem;
+        overflow: hidden;
+}
+.sketchCard:hover {
+    background: #242424;
+    cursor: pointer;
+    color: #fff;
+}
+.sketchImage {
+    position: absolute;
+            z-Index: -1;
+            left: 0;
+            top: 6rem;
+            width: calc((100vw - 100px) / 4);
+            height: auto;
+            padding: 0;
+            margin: 0;
+            max-Width: calc((100vw - 100px) / 4);
+            user-drag: none;
+                -webkit-user-drag: none;
+                user-select: none;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+}
+.divider {
+    border: 0.1px solid var(--color-grey);
+        flex-grow: 1;
+        margin: 0 8px;
+}
+
+.permanent-marker-regular {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.post-it {
+    height: 300px;
+    width: 296px;
+    margin:0;
+    padding: 16px;
+    /*border: 1px solid #E8E8E8;*/
+    border-bottom-right-radius: 60px 5px;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    word-wrap: break-word;
+    cursor: pointer;
+    box-shadow: 0px 3px 3px #c8c8c8;
+    text-align: left;
+}
+/*
+.flip-card-inner:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -0px;
+    bottom: 20px;
+    width: 200px;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.40);
+    transform: matrix(-1, -0.1, 0, 1, 0, 0);
+}*/
+
+.post-it p, .post-it h2 {
+    font-family: 'Permanent Marker';
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 120%;
+}
+.real {
+    /*background: linear-gradient(135deg, #ffcd00 81%, #f9c906 82%, #ffcd00 82%, #ffdc4d 100%);
+    border-top: 60px solid #ffcd00;*/
+    background: linear-gradient(135deg, #ffcd00 82%, #f9c906 90%, #ffcd00 94%, #ffdc4d 100%);
+}
+/*
+linear-gradient(135deg, #ffcd00 82%, #f9c906 90%, #ffcd00 94%, #ffdc4d 100%)
+*/
+
+.yellow {
+    background: linear-gradient(135deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%);
+    border-top: 60px solid #fdfd86;
+}
+
+.blue {
+    background: linear-gradient(135deg, #affbff 81%, #affbff 82%, #affbff 82%, #c2f9fc 100%);
+    border-top: 60px solid #aafaff;
+}
+
+.red {
+    background: linear-gradient(135deg, #ffd5c9 81%, #ffd5c9 82%, #ffd5c9 82%, #ffe9e2 100%);
+    border-top: 60px solid #ffd3c6;
+}

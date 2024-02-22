@@ -5,6 +5,10 @@ import Layout from "../components/layout"
 import TextareaAutosize from "react-textarea-autosize"
 import Seo from "../components/seo"
 import { navigate } from "gatsby"
+import interrogante from "../images/interrogante.png"
+//
+import Draggable, { DraggableCore } from 'react-draggable'; // Both at the same time
+
 //
 import { graphql } from "gatsby"
 //import { RichText } from "prismic-reactjs"
@@ -18,6 +22,7 @@ import {
   faSquareInstagram,
 } from "@fortawesome/free-brands-svg-icons"
 import "../components/caja.css"
+import "../components/postit.scss"
 //
 //
 const handleSubmit = event => {
@@ -61,11 +66,38 @@ const socialLinks = [
 const title = "Contact"
 
 //const Testing = ({ data }) => {
-const Contact = ({data}) => {
+const getLength = ({ length }, minLength) => minLength > length ? minLength : length;
+
+const Contact = ({data, minLength = 34 }) => {
 
 
 const BlogPosts = () => {
   const posts = data.allPrismicPost.edges
+  const results = []
+  for (let i = 0; i < 18; i++) {
+    results.push(posts[i] || 'placeholder')
+  }
+  console.log(results)
+  function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex > 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+//shuffle(results)
+  shuffle(posts)
+console.log(results)
   if (!posts) return null
   return (
     <div
@@ -73,29 +105,52 @@ const BlogPosts = () => {
       display: "flex",
       gap: "1rem",
       margin: "var(--space-5)",
-      maxWidth: "70vw",
+      maxWidth: "99vw",
       margin: "auto",
       flexDirection: "row",
     flexWrap: "wrap",
+    minHeight: "100vh",
       }}
   >
       {posts.map(post => {
         return (
+          <Draggable>
           <div 
-          className="cards"  
-          style={{
-            //width: "256px", 
+          className="post-it real"
+          //key={post.node.id}
+          >
             
-            
-            }}  
-            key={post.node.id}>
-            <h2 style={{margin: "0"}}>{post.node.data.title.text}</h2>
-            <p>
-              <time>{post.node.data.date}</time>
-            </p>
-            <div style={{maxWidth: "100px"}} dangerouslySetInnerHTML={{ __html: post.node.data.content.html }} />
+          
+              {(() => {
+                if (!post.node) {
+                  return (
+                   
+                      <h2 style={{ margin: "0" }}>Sorry</h2>
+                      
+                
+                  )
+                } else {
+                  return (
+                    <>
+                      <h2 style={{ margin: "0" }}>{post.node?.data.title.text}</h2>
+                      <p>
+                        <time>{post.raw?.data.date}</time>
+                      </p>
+                      <p>
+                        <time>{post.raw?.data.date}</time>
+                      </p>
+                      {/*<div style={{ maxWidth: "100px" }} dangerouslySetInnerHTML={{ __html: post.node?.data.content.html }} />*/}
+                </>
+                  )
+                }
+              })()}
+         
+
+                
+              
             
           </div>
+          </Draggable>
         )
       })}
       </div>

@@ -1,0 +1,139 @@
+.bg-noise {
+        background-image: url(../images/noise-light.png);
+        color: rgb(255, 250, 221);
+        //background: var(--color-background);
+        background-repeat: repeat;
+        background-clip: border-box;
+            background-size: auto;
+            background-repeat: repeat;
+        
+        overflow: hidden;
+}
+.protector {
+    //background: var(--color-background);
+            height: 48px;
+            position: fixed;
+            right: 48px;
+            left: 240px;
+}
+.bottom {
+    bottom: 0
+}
+
+.top {
+    top: 0
+}
+.cornerTopRight {
+        position: absolute;
+            top: 48px;
+            right: 0;
+            //background: var(--color-background);
+            width: 24px;
+            height: 24px;
+}
+.cornerTopLeft {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    //background: var(--color-background);
+    width: 24px;
+    height: 24px;
+}
+.cornerTopRight:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    width: 24px;
+    height: 24px;
+    border-top-right-radius: 24px;
+}
+.cornerTopLeft:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    width: 24px;
+    height: 24px;
+    border-top-left-radius: 24px;
+}
+
+.cornerTopRight {
+        position: absolute;
+            top: 48px;
+            right: 0;
+            //background: var(--color-background);
+            width: 24px;
+            height: 24px;
+
+}
+.cornerTopLeft {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    //background: var(--color-background);
+    width: 24px;
+    height: 24px;
+}
+.cornerTopRight:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    width: 24px;
+    height: 24px;
+    border-top-right-radius: 24px;
+}
+.cornerTopLeft:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    width: 24px;
+    height: 24px;
+    border-top-left-radius: 24px;
+}
+/***/
+.cornerBottomRight {
+    position: absolute;
+    bottom: 48px;
+    right: 0;
+    background: var(--color-background);
+    width: 24px;
+    height: 24px;
+}
+
+.cornerBottomLeft {
+    position: absolute;
+    bottom: 48px;
+    left: 0;
+    //background: var(--color-background);
+    width: 24px;
+    height: 24px;
+}
+
+.cornerBottomRight:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    width: 24px;
+    height: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.cornerBottomLeft:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    width: 24px;
+    height: 24px;
+    border-bottom-left-radius: 24px;
+}
