@@ -1,6 +1,7 @@
 import * as React from "react"
 import { navigate } from "gatsby"
 import { Link } from "gatsby"
+import Nav from "../components/menunav"
 
 const quotes = [
   {
@@ -41,6 +42,7 @@ const samplePageLinks = [
 
 function Cta() {
   return (
+    <>
     <div
       className="quote"
       style={{
@@ -53,8 +55,10 @@ function Cta() {
         padding: "var(--space-5)",
         //display: "flex",
         gap: "3rem",
+        //maxWidth: "70vw",
       }}
     >
+      <div style={{margin: "auto", maxWidth: "70vw", display: "flex", width: "100%"}}>
       <div
         style={{
           //width: "50%",
@@ -137,7 +141,12 @@ function Cta() {
           </div>
         ))}
       </div>
+      </div>
     </div>
+      <nav style={{ gap: "8px", display: "flex", alignItems: "flex-start" }}>
+    <Nav></Nav>
+    </nav>
+    </>
   )
 }
 

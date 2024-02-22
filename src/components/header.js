@@ -2,8 +2,17 @@ import * as React from "react"
 import { Link } from "gatsby"
 //import { useStaticQuery, graphql } from "gatsby"
 
+
 const Header = ({ siteTitle, headerChild }) => (
-  <header
+  <header></header>
+   
+)
+
+export default Header
+
+/**
+ * 
+ * /* <header
     style={{
       //margin: `0 auto`,
       marginTop: `1rem`,
@@ -24,54 +33,7 @@ const Header = ({ siteTitle, headerChild }) => (
       position: "sticky",
     }}
   >
-    <nav style={{ gap: "8px", display: "flex", width: "40%" }}>
-      <Link
-        style={{
-          //fontFamily: "Henken Grotesk",
-          padding: "4px 16px",
-          fontSize: "18px",
-          background: "#f3f3f3",
-          borderRadius: "8px",
-          fontWeight: "700",
-          color: "#000",
-          textDecoration: "none",
-        }}
-        to="/"
-      >
-        Projects{" "}
-      </Link>
-      <Link
-        style={{
-          //fontFamily: "Henken Grotesk",
-          padding: "4px 16px",
-          fontSize: "18px",
-          fontWeight: "700",
-          background: "#f3f3f3",
-          borderRadius: "8px",
-          color: "#939393",
-          textDecoration: "none",
-        }}
-        to="/about"
-      >
-        About
-      </Link>
-      <Link
-        style={{
-          //fontFamily: "Henken Grotesk",
-          padding: "4px 16px",
-          fontSize: "18px",
-          fontWeight: "700",
-          background: "#f3f3f3",
-          borderRadius: "8px",
-          color: "#939393",
-          textDecoration: "none",
-        }}
-        to="/contact"
-      >
-        Contact
-      </Link>
-    </nav>
-    <div
+      <div
       style={{ display: "flex", width: "50%", justifyContent: "space-between" }}
     >
       <span>
@@ -108,7 +70,6 @@ const Header = ({ siteTitle, headerChild }) => (
         </Link>
       </div>
     </div>
-  </header>
-)
-
-export default Header
+        </header>    
+        */
+ 

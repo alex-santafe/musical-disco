@@ -7,9 +7,12 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
-    title: `Archipielago`,
+    title: `ThinkThank`,
     description: `Find Alex Santafé's, award-winning artist and creative director, recent illustration portfolio.`,
     author: `Alex Santafe`,
     siteUrl: `https://alexsantafe.com`,
@@ -19,6 +22,23 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: `thinkthank`,
+        accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        schemas: {
+          post: require("./custom_types/post.json"),
+        },
+        pages: [{
+          type: 'Post',          // Custom type of the document
+          match: '/blog/:uid',   // Pages will be generated in this pattern
+          path: '/blog-preview', // Placeholder route for previews
+          //component: require.resolve('./src/templates/post.js') // Template file
+        }]
+      },
+    },
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
